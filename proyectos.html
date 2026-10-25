@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Peludos</title>
+    <!-- Importamos la misma fuente tipográfica -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0b0c10;
+            --accent-purple: #8a2be2;
+            --accent-pink: #ff007f;
+            --text-main: #ffffff;
+            --text-muted: #c5c6c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            /* El fondo característico con destellos */
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(138, 43, 226, 0.15), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 127, 0.15), transparent 40%);
+            overflow-x: hidden;
+        }
+
+        /* Encabezado */
+        header {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-pink);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* Cuadrícula de la galería */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        /* Tarjetas con efecto cristal */
+        .gallery-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(138, 43, 226, 0.2);
+            border-color: rgba(255, 0, 127, 0.4);
+        }
+
+        /* Estilos de las imágenes */
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 2px solid transparent;
+            transition: border-color 0.4s ease, transform 0.4s ease;
+        }
+
+        .gallery-card:hover .gallery-img {
+            border-color: var(--accent-purple);
+            transform: scale(1.03);
+        }
+
+        .gallery-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .gallery-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+        <h2>Amigos Peludos</h2>
+    </header>
+
+    <div class="gallery-grid">
+        <!-- Tarjeta 1: Golden Retriever y Gato -->
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=500&q=80" alt="Gato con Golden Retriever" class="gallery-img">
+            <h3>Golden & Gatito</h3>
+            <p>Un pequeño felino jugando con un gran Golden Retriever.</p>
+        </div>
+
+        <!-- Tarjeta 2: Husky y Gato -->
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=500&q=80" alt="Gato y perro de compañía" class="gallery-img">
+            <h3>Husky & Amigo</h3>
+            <p>La combinación perfecta entre la energía perruna y la curiosidad gatuna.</p>
+        </div>
+
+        <!-- Tarjeta 3: Bulldog/Pug y Gato -->
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=500&q=80" alt="Pug" class="gallery-img">
+            <h3>Pug & Felino</h3>
+            <p>Compañeros inseparables de siestas y travesuras.</p>
+        </div>
+        
+        <!-- Tarjeta 4: Mezcla adorable -->
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=500&q=80" alt="Cachorros y gatitos" class="gallery-img">
+            <h3>Dulce Compañía</h3>
+            <p>Diferentes razas demostrando que el amor no tiene especies.</p>
+        </div>
+    </div>
+
+</body>
+</html>

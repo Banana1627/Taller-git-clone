@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Espectacular</title>
+    <!-- Importamos la fuente desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0b0c10;
+            --accent-purple: #8a2be2;
+            --accent-pink: #ff007f;
+            --text-main: #ffffff;
+            --text-muted: #c5c6c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            /* Fondo sutil con destellos */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(255, 0, 127, 0.15), transparent 25%);
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 800px;
+            /* Efecto cristal (Glassmorphism) */
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            /* Texto con degradado morado y rosa */
+            background: linear-gradient(to right, var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Contenedor para organizar los enlaces */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+            background-size: 200% auto;
+            transition: 0.5s;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-position: right center;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Estilos para el texto antes del gato */
+        .social-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: -15px;
+        }
+
+        /* Estilos para la imagen del gatito */
+        .cat-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent-purple);
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .cat-img:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
+        }
+
+        /* Animación suave de flotación */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Diseño responsivo para celulares */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .container { padding: 30px 20px; width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡Hola Mundo!</h1>
+        <p class="description">Esta es una plantilla espectacular diseñada con un estilo moderno. El fondo oscuro hace que los colores brillantes resalten, creando un efecto visual increíble y muy tecnológico.</p>
+        
+        <div class="links-wrapper">
+            <!-- 1. Enlace a la subpágina -->
+            <a href="proyectos.html" class="btn">Ir a Sub-página</a>
+            
+            <p class="social-text">Visita Facebook</p>
+            
+            <!-- 2. Enlace externo a Facebook con imagen de gatito negro -->
+            <a href="https://www.facebook.com" target="_blank" title="Ir a Facebook">
+                <!-- Se usa target="_blank" para que Facebook se abra en una pestaña nueva -->
+                <img src="https://images.unsplash.com/photo-1605092676920-8ac5ae40c7c8?auto=format&fit=crop&w=200&q=80" alt="Gatito negro" class="cat-img">
+            </a>
+        </div>
+    </div>
+
+<script>
+    // a. Preguntar el nombre
+    let nombre = prompt("¿Cuál es tu nombre?");
+    
+    // b. Preguntar la fecha de nacimiento
+    let anioNacimiento = prompt("¿En qué año naciste? (ejemplo: 2006)");
+    
+    // Calcular la edad 
+    let anioActual = new Date().getFullYear();
+    let edad = anioActual - parseInt(anioNacimiento);
+    
+    // c. Imprimir el nombre y la edad en la página
+    document.write("<div style='color: white; text-align: center; margin-top: 20px;'>");
+    document.write("<h2>Nombre: " + nombre + "</h2>");
+    document.write("<h2>Edad: " + edad + " años</h2>");
+    document.write("</div>");
+</script>
+</body>
+</html>
