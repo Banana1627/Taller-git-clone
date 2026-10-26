@@ -171,6 +171,13 @@
     // Calcular la edad 
     let anioActual = new Date().getFullYear();
     let edad = anioActual - parseInt(anioNacimiento);
+        // d. Validar mayoría de edad
+    if (edad >= 18) {
+        alert("Bienvenido/a, puedes ingresar.");
+    } else {
+        alert("Eres menor de edad. Te vamos a redireccionar.");
+        window.location.href = "https://www.google.com";
+    }
     
     // c. Imprimir el nombre y la edad en la página
     document.write("<div style='color: white; text-align: center; margin-top: 20px;'>");
